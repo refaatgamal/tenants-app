@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "0d3e9778-ce10-4201-ab3f-8bb44a18ba94",
+		"name": "Tenants App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12898860"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Nader Gamal",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "nader@nader.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234567",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "1234567",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://tenant1.tenants-app.test/public/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"tenant1",
+								"tenants-app",
+								"test"
+							],
+							"path": [
+								"public",
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "nader@nader.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234567",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://tenant2.tenants-app.test/public/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"tenant2",
+								"tenants-app",
+								"test"
+							],
+							"path": [
+								"public",
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC90ZW5hbnRzLWFwcC50ZXN0XC9wdWJsaWNcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2NjY5NzIxMDgsImV4cCI6MTY2Njk3NTcwOCwibmJmIjoxNjY2OTcyMTA4LCJqdGkiOiJzSWg2RVNNMVd0ems1R2htIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0._hDanCg3iuplSQJ4eX-TIays9tnMsaLvAL66EcJFZkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://tenants-app.test/public/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"tenants-app",
+								"test"
+							],
+							"path": [
+								"public",
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC90ZW5hbnQyLnRlbmFudHMtYXBwLnRlc3RcL3B1YmxpY1wvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY2Njk5MTc4NSwiZXhwIjoxNjY2OTk1Mzg1LCJuYmYiOjE2NjY5OTE3ODUsImp0aSI6IkJyZUZZaVplUEpIQW1PaTgiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.k3D5FdWuvg-oygsfbRUvTAn9CNJPQpIzpU-73kHNZAc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test Product",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Product desc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://tenant2.tenants-app.test/public/api/products",
+							"protocol": "http",
+							"host": [
+								"tenant2",
+								"tenants-app",
+								"test"
+							],
+							"path": [
+								"public",
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC90ZW5hbnQyLnRlbmFudHMtYXBwLnRlc3RcL3B1YmxpY1wvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY2Njk5MTc4NSwiZXhwIjoxNjY2OTk1Mzg1LCJuYmYiOjE2NjY5OTE3ODUsImp0aSI6IkJyZUZZaVplUEpIQW1PaTgiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.k3D5FdWuvg-oygsfbRUvTAn9CNJPQpIzpU-73kHNZAc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://tenant2.tenants-app.test/public/api/products/1?name=Product test e&description=test desc e",
+							"protocol": "http",
+							"host": [
+								"tenant2",
+								"tenants-app",
+								"test"
+							],
+							"path": [
+								"public",
+								"api",
+								"products",
+								"1"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Product test e"
+								},
+								{
+									"key": "description",
+									"value": "test desc e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC90ZW5hbnQyLnRlbmFudHMtYXBwLnRlc3RcL3B1YmxpY1wvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY2Njk5MTc4NSwiZXhwIjoxNjY2OTk1Mzg1LCJuYmYiOjE2NjY5OTE3ODUsImp0aSI6IkJyZUZZaVplUEpIQW1PaTgiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.k3D5FdWuvg-oygsfbRUvTAn9CNJPQpIzpU-73kHNZAc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://tenant2.tenants-app.test/public/api/products/1",
+							"protocol": "http",
+							"host": [
+								"tenant2",
+								"tenants-app",
+								"test"
+							],
+							"path": [
+								"public",
+								"api",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
